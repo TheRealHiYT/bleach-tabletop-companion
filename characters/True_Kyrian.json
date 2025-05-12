@@ -1,0 +1,16 @@
+{
+  "name": "Ruby Rose (Final Getsuga Tensho)",
+  "hp": 65000,
+  "strength": 40000,
+  "dex": 16000,
+  "cha": 40,
+  "snk": 30,
+  "mnd": 7000,
+  "intl": 7500,
+  "acc": 35000,
+  "spd": 10000,
+  "rei": 0,
+  "dmg_dice": "1d150",
+  "max_attacks": 4,
+  "attack_range": 3
+}

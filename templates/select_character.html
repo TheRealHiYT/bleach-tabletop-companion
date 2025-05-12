@@ -1,0 +1,21 @@
+<h2>Select Character</h2>
+<form method="POST">
+  <label>Choose a character:</label><br>
+  <select name="character_file">
+    {% for file in files %}
+      <option value="{{ file }}">{{ file }}</option>
+    {% endfor %}
+  </select><br><br>
+
+  <label>Load into:</label><br>
+  <input type="radio" name="player_slot" value="0" checked> Player 1<br>
+  <input type="radio" name="player_slot" value="1"> Player 2<br><br>
+
+  <button type="submit">Load Character</button>
+
+  <label>AI Mode:</label><br>
+  <input type="radio" name="ai_mode" value="no" checked> no<br>
+  <input type="radio" name="ai_move" value="yes"> yes<br><br>
+</form>
+
+<a href="{{ url_for('create_character') }}">Create New Character</a>

@@ -1,0 +1,16 @@
+{
+  "name": "Gabriel",
+  "hp": 1150,
+  "strength": 120,
+  "dex": 450,
+  "cha": 40,
+  "snk": 30,
+  "mnd": 70,
+  "intl": 75,
+  "acc": 205,
+  "spd": 300,
+  "rei": 10,
+  "dmg_dice": "1d20",
+  "max_attacks": 3,
+  "attack_range": 2
+}

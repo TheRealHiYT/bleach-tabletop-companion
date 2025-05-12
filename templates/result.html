@@ -1,0 +1,19 @@
+<h2>Battle Result</h2>
+
+{% if winner %}
+  <p><strong>{{ winner.name }}</strong> is victorious!</p>
+{% else %}
+  <p>It's a draw! Both players are down.</p>
+{% endif %}
+
+<h3>Battle Log:</h3>
+<ul>
+  {% for entry in game.log %}
+    <li>{{ entry }}</li>
+  {% endfor %}
+</ul>
+
+<a href="{{ url_for('index') }}">Return to Game</a>
+<form action="{{ url_for('new_battle') }}" method="post">
+  <button type="submit">Start New Battle</button>
+</form>

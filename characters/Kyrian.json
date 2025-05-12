@@ -1,0 +1,16 @@
+{
+  "name": "Ruby Rose",
+  "hp": 170,
+  "strength": 40,
+  "dex": 165,
+  "cha": 40,
+  "snk": 30,
+  "mnd": 70,
+  "intl": 75,
+  "acc": 35,
+  "spd": 100,
+  "rei": 10,
+  "dmg_dice": "1d20",
+  "max_attacks": 1,
+  "attack_range": 3
+}

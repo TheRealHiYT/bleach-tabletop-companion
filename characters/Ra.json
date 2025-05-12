@@ -1,0 +1,16 @@
+{
+  "name": "Ra",
+  "hp": 30000,
+  "strength": 20000,
+  "dex": 7000,
+  "cha": 15000,
+  "snk": 0,
+  "mnd": 10000,
+  "intl": 16000,
+  "acc": 12500,
+  "spd": 8000,
+  "rei": 30000,
+  "dmg_dice": "1d12",
+  "max_attacks": 3,
+  "attack_range": 3
+}

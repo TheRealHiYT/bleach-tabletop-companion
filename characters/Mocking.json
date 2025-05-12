@@ -1,0 +1,16 @@
+{
+  "name": "Fishbone Γ",
+  "hp": 170,
+  "strength": 60,
+  "dex": 150,
+  "cha": 110,
+  "snk": 0,
+  "mnd": 130,
+  "intl": 50,
+  "acc": 225,
+  "spd": 80,
+  "rei": 50,
+  "dmg_dice": "1d20",
+  "max_attacks": 2,
+  "attack_range": 1
+}

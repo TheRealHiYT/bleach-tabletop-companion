@@ -1,0 +1,16 @@
+{
+  "name": "V1",
+  "hp": 550,
+  "strength": 340,
+  "dex": 650,
+  "cha": 40,
+  "snk": 30,
+  "mnd": 70,
+  "intl": 75,
+  "acc": 375,
+  "spd": 450,
+  "rei": 10,
+  "dmg_dice": "1d20",
+  "max_attacks": 4,
+  "attack_range": 3
+}

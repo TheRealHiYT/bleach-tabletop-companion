@@ -1,0 +1,16 @@
+{
+  "name": "Polyriff",
+  "hp": 200,
+  "strength": 150,
+  "dex": 75,
+  "cha": 0,
+  "snk": 0,
+  "mnd": 0,
+  "intl": 0,
+  "acc": 100,
+  "spd": 80,
+  "rei": 100,
+  "dmg_dice": "1d16",
+  "max_attacks": 2,
+  "attack_range": 1
+}

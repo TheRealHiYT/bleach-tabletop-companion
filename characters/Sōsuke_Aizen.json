@@ -1,0 +1,16 @@
+{
+  "name": "S\u014dsuke Aizen",
+  "hp": 45000,
+  "strength": 7000,
+  "dex": 6000,
+  "cha": 8500,
+  "snk": 7500,
+  "mnd": 5500,
+  "intl": 8000,
+  "acc": 17250,
+  "spd": 3000,
+  "rei": 10500,
+  "dmg_dice": "1d40",
+  "max_attacks": 3,
+  "attack_range": 2
+}

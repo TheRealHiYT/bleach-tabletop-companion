@@ -1,0 +1,19 @@
+<h2>Create New Character</h2>
+    <form method="POST">
+      Name: <input name="name"><br>
+      HP: <input name="hp" type="number" placeholder="0"><br>
+      STR: <input name="str" type="number" placeholder="0"><br>
+      DEX: <input name="dex" type="number" placeholder="0"><br>
+      CHA: <input name="cha" type="number" placeholder="0"><br>
+      SNK: <input name="snk" type="number" placeholder="0"><br>
+      MND: <input name="mnd" type="number" placeholder="0"><br>
+      INTL: <input name="intl" type="number" placeholder="0"><br>
+      ACC: <input name="acc" type="number" placeholder="0"><br>
+      SPD: <input name="spd" type="number" placeholder="0"><br>
+      REI: <input name="rei" type="number" placeholder="0"><br>
+      Damage Dice: <input name="damage_dice" placeholder="1d8"><br>
+      Max Attacks: <input name="max_attacks" type="number" placeholder=1><br>
+      Attack Range: <input name="attack_range" type="number" placeholder=1><br>
+      <button type="submit">Create</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to Game</a>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tabletop Combat Sim</title>
+    <style>
+      .player1 {
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+        border-radius: 50%;
+        margin: auto;
+      }
+
+      .player2 {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+        margin: auto;
+      }
+
+      td {
+        vertical-align: middle;
+        padding: 0;
+      }
+    </style>
+</head>
+<body>
+<hr>
+<a href="{{ url_for('create_character') }}">Create Character</a> |
+<a href="{{ url_for('upload_character') }}">Upload Character</a>
+
+<h1>Turn: {{ game.current_player.name }}</h1>
+
+
+<h3>Player 1: {{ game.players[0].name }} - HP: {{ game.players[0].hp }}</h3>
+<h3>Player 2: {{ game.players[1].name }} - HP: {{ game.players[1].hp }}</h3>
+
+<h3>Positions</h3>
+<p>{{ game.players[0].name }}: ({{ game.players[0].x }}, {{ game.players[0].y }})</p>
+<p>{{ game.players[1].name }}: ({{ game.players[1].x }}, {{ game.players[1].y }})</p>
+
+<h3>Movement</h3>
+<ul>
+    <li><a href="{{ url_for('move') }}?dx=-1&dy=0">← Left</a></li>
+    <li><a href="{{ url_for('move') }}?dx=1&dy=0">→ Right</a></li>
+    <li><a href="{{ url_for('move') }}?dx=0&dy=-1">↑ Up</a></li>
+    <li><a href="{{ url_for('move') }}?dx=0&dy=1">↓ Down</a></li>
+</ul>
+
+<table border="1" style="border-collapse: collapse; text-align: center;">
+  {% for y in range(game.GRID_SIZE) %}
+  <tr>
+    {% for x in range(game.GRID_SIZE) %}
+    {% set is_player_tile = False %}
+    {% for player in game.players %}
+      {% if player and player.x == x and player.y == y %}
+        {% set is_player_tile = True %}
+      {% endif %}
+    {% endfor %}
+    <td style="width: 30px; height: 30px; background-color: {% if is_player_tile %}#4169e1{% else %}white{% endif %};">
+      {% for player in game.players %}
+        {% if player and player.x == x and player.y == y %}
+          <div class="{% if player == game.players[0] %}player1{% else %}player2{% endif %}">
+            <strong>{{ player.name }}</strong><br>
+            HP: {{ player.hp }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% if game.current_player and game.current_player.is_alive() %}
+<a href="{{ url_for('attack') }}">Attack</a><br>
+<a href="{{ url_for('auto_fight') }}">Auto-Fight</a><br>
+{% endif %}
+<a href="{{ url_for('end_turn') }}">End Turn</a><br>
+<br>
+<form action="{{ url_for('new_battle') }}" method="post">
+    <button type="submit">New Battle</button>
+</form>
+
+<h2>Upload Character JSON</h2>
+<form enctype="multipart/form-data" method="POST">
+    <input name="file" type="file">
+    <button type="submit">Upload</button>
+</form>
+<a href="{{ url_for('index') }}">Back to Game</a>
+
+<h3>Combat Log</h3>
+<ul>
+    {% for entry in game.log|reverse %}
+    <li>{{ entry }}</li>
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>
