@@ -3,9 +3,6 @@ from math import trunc, hypot
 from transformers import pipeline
 import json
 
-# Load this once
-text_gen = pipeline("text-generation", model="gpt2")
-
 
 def roll(dice: str):
     """Roll dice in the form '1d20', '2d6', etc."""
@@ -22,6 +19,7 @@ class Character:
                  dmg_dice: str = "1d6", attack_range=1, max_attacks: int = 1, x=0, y=0):
 
         self.name = name
+        self.max_hp = 100 + hp
         self.hp = 100 + hp
         self.str = trunc(strength / 20)
         self.dex = trunc(dex / 40)
@@ -86,6 +84,18 @@ class Game:
     @property
     def other_player(self):
         return self.players[(self.turn_index + 1) % 2]
+
+    def import_ai(self):
+        """Load a text generation pipeline if AI Mode is active"""
+        if self.ai_mode:
+            # Log loading of AI
+            print(f"AI Mode ({self.ai_mode}) returned True! Loading AI...")
+            self.log.append(f"AI Mode ({self.ai_mode}) returned True! Loading AI...")
+            # Load this once
+            text_gen = pipeline("text-generation", model="gpt2")
+            return
+        else:
+            return
 
     def attack(self):
         attacker = self.current_player

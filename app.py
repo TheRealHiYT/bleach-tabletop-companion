@@ -72,6 +72,7 @@ def select_character():
         game.log.append(f"Loaded {char.name} into Player {slot + 1} slot.")
         ai_mode = request.form['ai_mode']
         game.ai_mode = False if ai_mode == "no" else True
+        game.import_ai()
         return redirect(url_for('index'))
 
     return render_template('select_character.html', files=character_files)

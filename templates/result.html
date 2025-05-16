@@ -2,6 +2,7 @@
 
 {% if winner %}
   <p><strong>{{ winner.name }}</strong> is victorious!</p>
+<p><strong>{{ winner.name }} had {{ winner.hp }}/{{ winner.max_hp }} HP</strong> before going down!</p>
 {% else %}
   <p>It's a draw! Both players are down.</p>
 {% endif %}
